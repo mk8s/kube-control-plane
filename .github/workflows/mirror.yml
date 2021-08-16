@@ -5,7 +5,7 @@ on:
     - v*
 jobs:
   build_apiserver:
-    name: Build and Push
+    name: kube-apiserver
     runs-on: ubuntu-latest
     steps:
     - name: Set variables
@@ -34,7 +34,7 @@ jobs:
           hyperk8s/kube-apiserver:${{ steps.vars.outputs.tag }}
 
   build_controller_manager:
-    name: Build and Push
+    name: kube-controller-manager
     runs-on: ubuntu-latest
     steps:
     - name: Set variables
@@ -63,7 +63,7 @@ jobs:
           hyperk8s/kube-controller-manager:${{ steps.vars.outputs.tag }}
 
   build_scheduler:
-    name: Build and Push
+    name: kube-scheduler
     runs-on: ubuntu-latest
     steps:
     - name: Set variables
@@ -92,7 +92,7 @@ jobs:
           hyperk8s/kube-scheduler:${{ steps.vars.outputs.tag }}
 
   build_proxy:
-    name: Build and Push
+    name: kube-proxy
     runs-on: ubuntu-latest
     steps:
     - name: Set variables
